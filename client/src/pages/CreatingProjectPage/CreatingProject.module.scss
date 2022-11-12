@@ -1,0 +1,116 @@
+@import '../../consts/variables.scss';
+@import url('https://cdn.syncfusion.com/ej2/material.css');
+
+.content {
+    @extend %widthMargin;
+    
+    &__stuffing {
+        height: 100%;
+        max-width: 832px;
+        margin: auto;
+        padding: 32px;
+
+        & > h1 {
+            @include fonts($fntSize: 32px, $fntWeight: 700);
+            color: $fontDark;
+            text-align: center;
+        }
+
+        .mainForm {
+            @include flex;
+            width: 100%;
+
+            .inputTextfield {
+                @include input($width: 48%);
+
+                .label {
+                    @include labelMargin($marginTop: 49px);
+                }
+
+                .сalendar {
+                    width: 100%;
+                }
+            }
+
+            .inputTextArea {
+                @include input;
+
+                .textAreaLabel {
+                    @include labelMargin($marginTop: 35px);
+                }
+
+                & > textarea {
+                    box-sizing: border-box;
+                    outline: none;
+                    resize: vertical;
+                    font-family: 'Roboto';
+                    font-size: 16px;
+                    padding: 15px;
+                    border: 2px solid $purple;
+                    min-height: 80px;
+                    max-height: 160px;
+                    min-width: 100%;
+                    height: auto;
+                    border-radius: 10px;
+
+                    &::placeholder {
+                        color: #a3a3a3;
+                        font-weight: normal;
+                    }
+
+                    &:focus {
+                        border: 2px solid #645fb5;
+                        padding: 15px;
+                    }
+                }
+            }
+            
+            .inputWithMarginRight {
+                margin-right: 4%;
+            }
+
+            .button {
+                width: 100%;
+
+                .saveButton {
+                    height: 30px;
+                    width: 150px;
+                    background-color: $purple;
+                    text-align: center;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    position: relative;
+                    font-size: 10px;
+                    font-weight: bold;
+                    margin-top: 32px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .content {
+        
+        &__stuffing {
+            width: 100%;
+
+            & > h1 {
+                font-size: 24px;
+            }
+
+            .mainForm {
+                flex-direction: column;
+
+                .inputTextfield {
+                    width: 100%;
+
+                    .label {
+                        @include labelMargin($marginTop: 20px);
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

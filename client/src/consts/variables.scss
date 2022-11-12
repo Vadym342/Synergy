@@ -1,0 +1,223 @@
+$fontDark: #21143e;
+$bgCard: white;
+$fontLight: #e5e5e5;
+$pageBgClr: #f3f5f4;
+$purple: #7771d4;
+$darkPurple: #645fb5;
+$gray: #93939d;
+$ligghtPurpleBg: #E8E7FB;
+
+$tableColor: #f1f3f2;
+$itemTableClr: #564e45;
+$tableBorder: #eee6e7;
+
+$rejectTxt: #ff0606;
+$appliedTxt: #2ab957;
+$pendingTxt: #495dc1;
+$defaultGrayText: #787D8C;
+
+$pendingBg: #d6d4fd;
+$rejectBg: #fff1ee;
+$appliedBg: #f3fdee;
+$limeBg: #098707;
+$defaultWhiteBg: #EDF7ED;
+
+$bottomTextColor: #CCCCCC;
+
+$boxBgShadow: 3px 4px 50px 5px rgba(0, 0, 0, 0.05);
+$blockShadow: 0px 2px 40px rgba(0, 0, 0, 0.15);
+$innerShadow: inset 0px 3px 10px rgba(0, 0, 0, 0.25);
+$innerDescShadow: inset 0px 0px 10px 0px rgba(34, 60, 80, 0.2);
+$iconBgShadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+$authShadow: 0px 5px 100px 4px rgba(0, 0, 0, 0.05);
+
+$headerHeight: 64px;
+$headerMarginBottom: 40px;
+
+%baseFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+%flexAlign {
+  display: flex;
+  align-items: center;
+}
+
+%flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+%widthMargin {
+  width: 100%;
+  margin: auto;
+}
+
+%bottomText {
+  color: $bottomTextColor;
+  font-style: normal;
+  font-size: 10px;
+  width: 205px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+%marginTopLeftItem{
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+@mixin alertSettings($flexDirection: row) {
+  margin-left: 35px;
+  margin-top: 15px;
+}
+
+@mixin input($width: 100%) {
+  width: $width;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $fontDark;
+  font-size: 14px;
+}
+
+@mixin flex($flexDirection: row) {
+  display: flex;
+  flex-direction: $flexDirection;
+  flex-wrap: wrap;
+}
+
+@mixin fontStyleItem($fontSize: 32px) {
+  font-weight: 700;
+  font-size: $fontSize; 
+}
+
+@mixin pElementItem($textAlign: left) {
+  text-align: $textAlign;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+@mixin labelMargin($marginTop) {
+  margin-top: $marginTop;
+  margin-bottom: 5px; 
+}
+
+@mixin pStyle($fontSize: 32px) {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: $purple;
+  font-size: $fontSize;
+  font-weight: bold;
+}
+
+@mixin headerTitle($fontSize: 32px) {
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  color: $fontDark;
+}
+
+@mixin settingsSubTitle($fontSize: 14px) {
+  font-weight: 500;
+  line-height: 16px;
+  color: $defaultGrayText;
+  margin-top: 10px;
+}
+@mixin settingsTabs($font-size: 18px) {
+    flex-direction: column;
+    width: 100px;
+    height: 50px;
+    font-weight: 500;
+    background-color: $ligghtPurpleBg;
+    color: $purple;
+    border-radius: 10px;
+}
+
+@mixin brdrRadShadow {
+  box-shadow: $blockShadow;
+  border-radius: 25px;
+}
+
+@mixin fonts($fntSize, $fntWeight: 400) {
+  font-size: $fntSize;
+  font-weight: $fntWeight;
+}
+
+@mixin itemStatus($txtClr, $bgClr) {
+  display: inline-block;
+  border-radius: 5px;
+  width: 100px;
+  color: $txtClr;
+  font-weight: 500;
+  padding: 5px 10px;
+  text-align: center;
+  background-color: $bgClr;
+}
+
+@mixin textField {
+  height: 50px;
+  border-radius: 10px;
+  font-size: 16px;
+  border: 2px solid $purple;
+  padding-left: 16px;
+  min-width: 150px;
+  &:focus {
+    outline: 1px solid $darkPurple;
+    color: $darkPurple;
+  }
+}
+@mixin lineSeparator {
+  position: relative;
+  &:after{
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid $ligghtPurpleBg;
+    width: 99%;
+    margin: 0 auto;
+    margin-top: 5px;
+    bottom: -10px;
+    border-radius: 10px;
+    left: 0.5%;
+  }
+}
+
+@mixin textArea {
+  outline: none;
+  resize: vertical;
+  font-family: 'Roboto';
+  font-size: 16px;
+  padding: 16px;
+  border: 2px solid $purple;
+  min-height: 150px;
+  height: auto;
+  border-radius: 10px;
+  min-width: 150px;
+}
+
+@mixin submitMsg($colorMsg, $bgClr) {
+  color: $colorMsg;
+  font-weight: medium;
+  background-color: $bgClr;
+  padding: 5px 10px;
+  margin-left: 16px;
+  border-radius: 5px;
+}
+
+@mixin fontStyleAccount() {
+  font-size: 14px;
+  margin-left: 5px;
+  font-weight: 500;
+}
